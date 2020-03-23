@@ -1,19 +1,24 @@
-case=hive
-user=squirrels
+_case=hive
+_user=squirrels
 
+####    ####
 #1 setup /bin/bash
 mkdir /ir/{tools, docs, forensics, evidence}
 mkdir "/evtx_logs/$case/"
-chown -R <user>:<user> /ir
-chown -R <user>:<user> /evtx_logs
+chown -R $_user:$_user /ir
+chown -R $_user:$_user /evtx_logs
 python3 -m pip install evtxtoelk
 
+####    ####
 #2 place logs in /evtx_logs/<case>/<hostname>/<filename>.evtx
 #!/bin/bash
 cd /evtx_logs
 rename -r 'y/ /_/' *
 rename -r 's/4%/_/' *
+cd /evtx_logs
+python3
 
+####    ####
 #3    python3 run commands in idle
 import os
 from evtxtoelk import EvtxToElk
