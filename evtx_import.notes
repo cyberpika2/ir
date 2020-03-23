@@ -3,10 +3,10 @@ _user=squirrels
 
 ####    ####
 #1 setup /bin/bash
-mkdir /ir/{tools, docs, forensics, evidence}
-mkdir "/evtx_logs/$case/"
-chown -R $_user:$_user /ir
-chown -R $_user:$_user /evtx_logs
+mkdir -P /ir/{tools, docs, forensics, evidence}
+mkdir -P "/evtx_logs/$case/"
+chown -r $_user:$_user /ir
+chown -r $_user:$_user /evtx_logs
 python3 -m pip install evtxtoelk
 
 ####    ####
