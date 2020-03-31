@@ -33,5 +33,6 @@ for subdir, dirs, files in os.walk(r'/evtx_logs/'):
         else:
             continue
 
-# if it crushes the index, mv <file> /ir/forensics, rm previous on list, followup manually
+# if it crushes the index, mv <file> /.ir/data/forensics, rm previous on list, followup manually
+# export to csv and use table / filters
 rerun python from 3
